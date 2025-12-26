@@ -2,8 +2,9 @@
 
 ## 📊 言語の内訳
 
-<p align="center">
-  <img src="./languages.svg" width="520" alt="Language statistics">
-</p>
+<div align="center">
+  <img src="./languages_programming.svg" width="48%" />
+  <img src="./languages_markup.svg" width="48%" />
+</div>
 
 

@@ -1,27 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg"
   width="520" height="220" viewBox="0 0 520 220">
 <style>
-.label, .value {
-  font-family: "Noto Sans", "Noto Sans JP",
-               -apple-system, BlinkMacSystemFont,
+.label, .value, .title {
+  font-family: -apple-system, BlinkMacSystemFont,
                "Segoe UI", Helvetica, Arial, sans-serif;
   fill: #374151;
 }
+.title { font-size: 16px; font-weight: 600; }
+.label { font-size: 14px; }
+.value { font-size: 13px; }
 
-.label {
-  font-size: 14px;
-}
-
-.value {
-  font-size: 13px;
-}
-
-/* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .label, .value {
-    fill: #E5E7EB;
-  }
+  .label, .value, .title { fill: #E5E7EB; }
 }
-
 </style>
-<path d="M 110,110 L 110.00,30.00 A 80,80 0 0,1 136.31,185.55 Z" fill="#FF914D"/><path d="M 110,110 L 136.31,185.55 A 80,80 0 0,1 30.03,107.93 Z" fill="#53ae53"/><path d="M 110,110 L 30.03,107.93 A 80,80 0 0,1 61.90,46.07 Z" fill="#00599C"/><path d="M 110,110 L 61.90,46.07 A 80,80 0 0,1 91.78,32.10 Z" fill="#3776AB"/><path d="M 110,110 L 91.78,32.10 A 80,80 0 0,1 100.54,30.56 Z" fill="#555555"/><path d="M 110,110 L 100.54,30.56 A 80,80 0 0,1 110.00,30.00 Z" fill="#9CA3AF"/><rect x="230" y="35" width="12" height="12" fill="#FF914D"/><text x="250" y="45" class="label">Jupyter Notebook</text><text x="460" y="45" class="value">44.7%</text><rect x="230" y="61" width="12" height="12" fill="#53ae53"/><text x="250" y="71" class="label">TeX</text><text x="460" y="71" class="value">30.7%</text><rect x="230" y="87" width="12" height="12" fill="#00599C"/><text x="250" y="97" class="label">C++</text><text x="460" y="97" class="value">14.3%</text><rect x="230" y="113" width="12" height="12" fill="#3776AB"/><text x="250" y="123" class="label">Python</text><text x="460" y="123" class="value">6.6%</text><rect x="230" y="139" width="12" height="12" fill="#555555"/><text x="250" y="149" class="label">C</text><text x="460" y="149" class="value">1.8%</text><rect x="230" y="165" width="12" height="12" fill="#9CA3AF"/><text x="250" y="175" class="label">Other</text><text x="460" y="175" class="value">1.9%</text></svg>
+
+<text x="20" y="24" class="title">Programming Languages (Composition)</text>
+<path d="M 110,110 L 110.00,30.00 A 80,80 0 1,1 67.73,177.92 Z" fill="#00599C"/><path d="M 110,110 L 67.73,177.92 A 80,80 0 0,1 49.87,57.23 Z" fill="#3776AB"/><path d="M 110,110 L 49.87,57.23 A 80,80 0 0,1 79.34,36.11 Z" fill="#555555"/><path d="M 110,110 L 79.34,36.11 A 80,80 0 0,1 107.09,30.05 Z" fill="#E16737"/><path d="M 110,110 L 107.09,30.05 A 80,80 0 0,1 110.00,30.00 Z" fill="#198CE7"/><rect x="230" y="40" width="12" height="12" fill="#00599C"/><text x="250" y="50" class="label">C++</text><text x="460" y="50" class="value">58.9%</text><rect x="230" y="66" width="12" height="12" fill="#3776AB"/><text x="250" y="76" class="label">Python</text><text x="460" y="76" class="value">27.6%</text><rect x="230" y="92" width="12" height="12" fill="#555555"/><text x="250" y="102" class="label">C</text><text x="460" y="102" class="value">7.3%</text><rect x="230" y="118" width="12" height="12" fill="#E16737"/><text x="250" y="128" class="label">MATLAB</text><text x="460" y="128" class="value">5.7%</text><rect x="230" y="144" width="12" height="12" fill="#198CE7"/><text x="250" y="154" class="label">R</text><text x="460" y="154" class="value">0.6%</text></svg>

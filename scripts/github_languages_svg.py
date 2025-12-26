@@ -31,7 +31,7 @@ PROGRAMMING_LANGUAGES = {
     "C", "C++", "C#", "Java", "Go", "Rust", "Swift", "Kotlin",
     "Haskell", "OCaml", "F#", "Elixir", "Erlang",
     "MATLAB", "Julia", "Fortran", "R",
-    "Scala", "Groovy",
+    "Scala", "Groovy","Jupyter Notebook",
     "Shell", "Bash", "PowerShell",
     "Dart", "Objective-C", "Assembly", "WebAssembly",
     "SQL",
@@ -68,6 +68,7 @@ LANG_COLORS = {
     "PHP": "#777BB4",
     "Swift": "#F05138",
     "Kotlin": "#A97BFF",
+    "Jupyter Notebook": "#DA5B0B",
     "Dart": "#0175C2",
     "Scala": "#DC322F",
     "Groovy": "#4298B8",
@@ -276,3 +277,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -44,7 +44,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           if git status --porcelain | grep .; then
-            git add languages.svg
+            git add languages_programming.svg
+            git add languages_markup.svg
             git commit -m "Update language statistics"
             git push
           else

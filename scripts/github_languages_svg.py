@@ -254,13 +254,13 @@ def main():
     markup_data, markup_total = top_with_other(markup)
 
     prog_svg = generate_svg(
-        "Programming Languages (Composition)",
+        "Programming Languages",
         prog_data,
         prog_total,
     )
 
     markup_svg = generate_svg(
-        "Markup / Config Languages (Composition)",
+        "Markup / Config Languages",
         markup_data,
         markup_total,
     )
@@ -277,4 +277,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

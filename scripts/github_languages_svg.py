@@ -1,5 +1,5 @@
-# This script was created with assistance from generative AI (ChatGPT / OpenAI GPT-5.2).
-# 本スクリプトは、生成AI（ChatGPT / OpenAI GPT-5.2）の支援を受けて作成されています。
+# This script was created with assistance from generative AI (ChatGPT / OpenAI GPT-5.2, GPT-5 mini).
+# 本スクリプトは、生成AI（ChatGPT / OpenAI GPT-5.2, GPT-5 mini）の支援を受けて作成されています。
 # The final design and validation were performed by the repository author.
 # 最終的な設計および検証は、リポジトリの作成者が行っています。
 
@@ -56,34 +56,34 @@ MARKUP_LANGUAGES = {
 LANG_COLORS = {
     # --- Programming Languages ---
     "Python": "#3776AB",
-    "JavaScript": "#F7DF1E",
+    "JavaScript": "#f1e05a",
     "TypeScript": "#3178C6",
     "C": "#555555",
     "C++": "#00599C",
-    "C#": "#512BD4",
-    "Java": "#B07219",
+    "C#": "#178600",
+    "Java": "#b07219",
     "Go": "#00ADD8",
-    "Rust": "#DEA584",
-    "Ruby": "#CC342D",
+    "Rust": "#dea584",
+    "Ruby": "#701516",
     "PHP": "#777BB4",
     "Swift": "#F05138",
     "Kotlin": "#A97BFF",
-    "Jupyter Notebook": "#DA5B0B",
+    "Jupyter Notebook": "#F37626",
     "Dart": "#0175C2",
     "Scala": "#DC322F",
-    "Groovy": "#4298B8",
+    "Groovy": "#4285F4",
     "Objective-C": "#438EFF",
     "Assembly": "#6E4C13",
     "WebAssembly": "#654FF0",
 
     # Functional / Scientific
-    "Haskell": "#5E5086",
+    "Haskell": "#5e5086",
     "OCaml": "#EC6813",
     "F#": "#378BBA",
     "Elixir": "#4B275F",
     "Erlang": "#A90533",
     "Julia": "#9558B2",
-    "MATLAB": "#E16737",
+    "MATLAB": "#e16737",
     "Fortran": "#734F96",
     "R": "#198CE7",
 
@@ -122,6 +122,39 @@ LANG_COLORS = {
     # --- Fallback ---
     "Other": "#9CA3AF",
 }
+
+
+def _hex_to_rgb(hexstr: str) -> Tuple[int, int, int]:
+    h = hexstr.lstrip('#')
+    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+
+def _color_distance(rgb1: Tuple[int, int, int], rgb2: Tuple[int, int, int]) -> float:
+    # Simple Euclidean distance in sRGB space (0-255)
+    return math.sqrt(sum((a - b) ** 2 for a, b in zip(rgb1, rgb2)))
+
+
+def validate_colors(mapping: Dict[str, str], threshold: float = 60.0):
+    """Check pairwise color distances and print warnings for low-distinguishability pairs.
+
+    threshold: distance below which two colors are considered too similar.
+    """
+    names = list(mapping.keys())
+    rgb_map = {n: _hex_to_rgb(mapping[n]) for n in names}
+    issues = []
+    for i in range(len(names)):
+        for j in range(i + 1, len(names)):
+            n1, n2 = names[i], names[j]
+            d = _color_distance(rgb_map[n1], rgb_map[n2])
+            if d < threshold:
+                issues.append((n1, n2, d))
+
+    if issues:
+        print("[color-validate] Warning: found similar colors (distance <", threshold, ")")
+        for n1, n2, d in sorted(issues, key=lambda x: x[2]):
+            print(f"  - {n1} vs {n2}: distance={d:.1f} ({mapping[n1]} {mapping[n2]})")
+    else:
+        print("[color-validate] All colors sufficiently distinguishable (threshold=", threshold, ")")
 
 
 # =========================
@@ -245,6 +278,8 @@ def generate_svg(title: str, data, total):
 # Main
 # =========================
 def main():
+    validate_colors(LANG_COLORS, threshold=60.0)
+
     repos = get_repositories()
     counter = collect_languages(repos)
 

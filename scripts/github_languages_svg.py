@@ -1,5 +1,5 @@
-# This script was created with assistance from generative AI (ChatGPT / OpenAI GPT-5.2, GitHub Copilot / GPT-5 mini).
-# 本スクリプトは、生成AI（ChatGPT / OpenAI GPT-5.2, GitHub Copilot / GPT-5 mini）の支援を受けて作成されています。
+# This script was created with assistance from generative AI (ChatGPT / OpenAI GPT-5.2,  / GPT-5 mini).
+# 本スクリプトは、生成AI（ChatGPT / OpenAI GPT-5.2, GPT-5 mini）の支援を受けて作成されています。
 # The final design and validation were performed by the repository author.
 # 最終的な設計および検証は、リポジトリの作成者が行っています。
 
@@ -246,8 +246,18 @@ def generate_svg(title: str, data, total):
 .label {{ font-size: 14px; }}
 .value {{ font-size: 13px; }}
 
+/* slice border: visible in both light and dark modes */
+.slice {{
+    stroke: rgba(255,255,255,0.85);
+    stroke-width: 2px;
+    stroke-linejoin: round;
+}}
+
 @media (prefers-color-scheme: dark) {{
   .label, .value, .title {{ fill: #E5E7EB; }}
+    .slice {{
+        stroke: rgba(0,0,0,0.65);
+    }}
 }}
 </style>
 
@@ -259,7 +269,7 @@ def generate_svg(title: str, data, total):
         frac = size / total if total > 0 else 0
         end = angle + frac * 2 * math.pi
         color = LANG_COLORS.get(lang, LANG_COLORS["Other"])
-        svg += f'<path d="{arc_path(CX, CY, R, angle, end)}" fill="{color}"/>'
+        svg += f'<path class="slice" d="{arc_path(CX, CY, R, angle, end)}" fill="{color}"/>'
         angle = end
 
     y = 50

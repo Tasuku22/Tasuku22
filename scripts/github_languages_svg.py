@@ -1,5 +1,5 @@
-# This script was created with assistance from generative AI (ChatGPT / OpenAI GPT-5.2, GPT-5 mini).
-# 本スクリプトは、生成AI（ChatGPT / OpenAI GPT-5.2, GPT-5 mini）の支援を受けて作成されています。
+# This script was created with assistance from generative AI (ChatGPT / OpenAI GPT-5.2, GitHub Copilot / GPT-5 mini).
+# 本スクリプトは、生成AI（ChatGPT / OpenAI GPT-5.2, GitHub Copilot / GPT-5 mini）の支援を受けて作成されています。
 # The final design and validation were performed by the repository author.
 # 最終的な設計および検証は、リポジトリの作成者が行っています。
 

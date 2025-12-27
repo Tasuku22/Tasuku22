@@ -248,7 +248,7 @@ def generate_svg(title: str, data, total):
 
 /* slice border: visible in both light and dark modes */
 .slice {{
-    stroke: rgba(255,255,255,0.85);
+    stroke: rgba(0,0,0,0.85);
     stroke-width: 2px;
     stroke-linejoin: round;
 }}
@@ -256,7 +256,7 @@ def generate_svg(title: str, data, total):
 @media (prefers-color-scheme: dark) {{
   .label, .value, .title {{ fill: #E5E7EB; }}
     .slice {{
-        stroke: rgba(0,0,0,0.65);
+        stroke: rgba(255,255,255,0.85);
     }}
 }}
 </style>
